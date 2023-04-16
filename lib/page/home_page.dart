@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+const List<Widget> fruits = <Widget>[
+  Text('Pick 3'),
+  Text('Pick 4'),
+
+];
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -9,6 +15,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+
+  static const String _title = 'ToggleButtons Sample';
+  final List<bool> _selectedFruits = <bool>[false, false];
+  bool vertical = false;
+
   final payout = TextEditingController();
   final betamount = TextEditingController();
 
@@ -17,6 +28,7 @@ class _HomeState extends State<Home> {
   int payouts = 00;
   int bet = 00;
   int result = 00;
+  bool check1 = false;
 
   void a(){
 
@@ -38,7 +50,10 @@ class _HomeState extends State<Home> {
       debugShowCheckedModeBanner: false,
 
       home: Scaffold(
-        appBar: AppBar(title: Text('Win Fall'),),
+        appBar: AppBar(title: Text('Win Fall'),
+
+
+        ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(
@@ -105,6 +120,73 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 20,),
                 Container(
+                  alignment: Alignment.topLeft,
+                  child: Text('Select',style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+                ),
+
+                Container(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: ToggleButtons(
+
+                      direction: vertical ? Axis.vertical : Axis.horizontal,
+
+                      onPressed: (int index) {
+                        setState(() {
+                          // The button that is tapped is set to true, and the others to false.
+                          for (int i = 0; i < _selectedFruits.length; i++) {
+                            _selectedFruits[i] = i == index;
+
+
+                          }
+
+                          if(_selectedFruits[0]== true){
+                            setState(() {
+    if(_formkey2.currentState!.validate() && _formkey.currentState!.validate()) {
+      payouts = int.parse(payout.text) * 7 * 3 * 2;
+      bet = int.parse(betamount.text) * 150;
+      result = bet - payouts;
+    }
+
+                            });
+
+                          } if(_selectedFruits[1]== true){
+                            setState(() {
+    if(_formkey2.currentState!.validate() && _formkey.currentState!.validate()) {
+      payouts = int.parse(payout.text) * 7 * 3 * 2;
+      bet = int.parse(betamount.text) * 375;
+      result = bet - payouts;
+    }
+
+                            });
+
+                          }
+
+
+
+                        });
+                      },
+
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
+                      selectedBorderColor: Colors.green,
+                      selectedColor: Colors.white,
+                      fillColor: Colors.lightGreen,
+                      color: Colors.black,
+                      constraints: const BoxConstraints(
+                          minHeight: 40.0,
+                          minWidth: 110
+
+                      ),
+                      isSelected: _selectedFruits,
+                      children: fruits,
+                    ),
+                  ),
+
+
+                ),
+
+/*
+                Container(
                   height: 50,
                   width: 100,
                   decoration: BoxDecoration(
@@ -118,6 +200,8 @@ class _HomeState extends State<Home> {
                     child: Text('Result', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
                   ),
                 ),
+                /
+ */
                 SizedBox(height: 10,),
                 Container(
                   alignment: Alignment.topLeft,
