@@ -49,6 +49,8 @@ class _HomeState extends State<Home> {
   bool check1 = false;
   bool isChecked = false;
   String pick = "";
+  String addresults = "";
+  String addresults_dollar= "";
 
   
 
@@ -56,6 +58,7 @@ class _HomeState extends State<Home> {
   int add = 0;
 
   int count = 1;
+  int poss = 0;
 
   void a(){
 
@@ -200,10 +203,20 @@ class _HomeState extends State<Home> {
                                 val2 = int.parse(betamount.text) * 150;
                                 result = bet - payouts;
                                 val3 = bet - payouts;
+                                if(bet<payouts){
+                                  poss = payouts - bet;
+                                }else{
+                                  poss = bet - payouts;
+                                }
                                 count = 0;
                                 remove = 0;
                                 add = 0;
-                                pick = "Pick 3 Values:";}
+                                pick = "Pick 3 Values:";
+                                addresults = "This is the count for having selected pick 3- ";
+                                addresults_dollar ="dollars a number for the past year";
+
+
+                              }
                                  else if(_selectedFruits[1]== true) {
                                 payouts = int.parse(payout.text) * 4 * 3 * 2;
                                 val1 = int.parse(payout.text) * 4 * 3 * 2;
@@ -211,10 +224,18 @@ class _HomeState extends State<Home> {
                                 val2 = int.parse(betamount.text) * 150;
                                 result = bet - payouts;
                                 val3 = bet - payouts;
+                                if(bet<payouts){
+                                  poss = payouts - bet;
+                                }else{
+                                  poss = bet - payouts;
+                                }
                                 count = 0;
                                 remove = 0;
                                 add = 0;
                                 pick = "Pick 3 Lines Values:";
+                                addresults = "This is the count for having selected pick 3 Lines";
+                                addresults_dollar ="dollars a number for the past year";
+
                               }else if(_selectedFruits[2]== true){
                                 payouts = int.parse(payout.text) * 7 * 3 * 2;
                                 val1 = int.parse(payout.text) * 7 * 3 * 2;
@@ -222,10 +243,18 @@ class _HomeState extends State<Home> {
                                 val2 = int.parse(betamount.text) * 375;
                                 result = bet - payouts;
                                 val3 = bet - payouts;
+                                if(bet<payouts){
+                                  poss = payouts - bet;
+                                }else{
+                                  poss = bet - payouts;
+                                }
                                 count = 0;
                                 remove = 0;
                                 add = 0;
                                 pick = "Pick 4 Values:";
+                                addresults = "This is the count for having selected pick 4-";
+                                addresults_dollar ="dollars a number for the past year";
+
                               }
 
                               }
@@ -236,10 +265,17 @@ class _HomeState extends State<Home> {
                                 val2 = int.parse(betamount.text) * 80;
                                 result = bet - payouts;
                                 val3 = bet - payouts;
+                                if(bet<payouts){
+                                  poss = payouts - bet;
+                                }else{
+                                  poss = bet - payouts;
+                                }
                                 count =0;
                                 remove = 0;
                                 add = 0;
                                 pick = "Pick 3 Values with Local Store: ";
+                                addresults = "This is the count for having selected pick 3 Local Store";
+                                addresults_dollar ="dollars a number for the past year";
 
                               }
                             else  if(_selectedFruits[1]== true){
@@ -249,10 +285,17 @@ class _HomeState extends State<Home> {
                                 val2 = int.parse(betamount.text) * 80;
                                 result = bet - payouts;
                                 val3 = bet - payouts;
+                                if(bet<payouts){
+                                  poss = payouts - bet;
+                                }else{
+                                  poss = bet - payouts;
+                                }
                                 count =0;
                                 remove = 0;
                                 add = 0;
                                 pick = "Pick 3 Lines Values with Local Store: ";
+                                addresults = "This is the count for having selected pick 3 Lines Local Store";
+                                addresults_dollar ="dollars a number for the past year";
 
                               }
                              else if(_selectedFruits[2]== true){
@@ -262,10 +305,17 @@ class _HomeState extends State<Home> {
                              val2 = int.parse(betamount.text) * 200;
                              result = bet - payouts;
                              val3 = bet - payouts;
+                             if(bet<payouts){
+                               poss = payouts - bet;
+                             }else{
+                               poss = bet - payouts;
+                             }
                              count = 0;
                              remove = 0;
                              add = 0;
                              pick = "Pick 4 Values with Local Store:";
+                             addresults = "This is the count for having selected pick 4 Local Store";
+                             addresults_dollar ="dollars a number for the past year";
                              }
 
 
@@ -307,11 +357,18 @@ class _HomeState extends State<Home> {
                               bet = int.parse(betamount.text) * 80;
                               val2 = int.parse(betamount.text) * 80;
                               result = bet - payouts;
+                              if(bet<payouts){
+                              poss = payouts - bet;
+                              }else{
+                                poss = bet - payouts;
+                              }
                               val3 = bet - payouts;
                               count =0;
                               remove = 0;
                               add = 0;
                               pick = "Pick 3 Values with Local Store: ";
+                              addresults = "This is the count for having selected pick 3 Local Store";
+                              addresults_dollar ="dollars a number for the past year";
 
                             }else{
 
@@ -321,10 +378,18 @@ class _HomeState extends State<Home> {
                             val2 = int.parse(betamount.text) * 150;
                             result = bet - payouts;
                             val3 = bet - payouts;
+                            if(bet<payouts){
+                              poss = payouts - bet;
+                            }else{
+                              poss = bet - payouts;
+                            }
                             count =0;
                             remove = 0;
                             add = 0;
                             pick = "Pick 3 Values:";
+
+                            addresults = "This is the count for having selected pick 3- ";
+                            addresults_dollar ="dollars a number for the past year";
 
                             }
 
@@ -341,10 +406,17 @@ class _HomeState extends State<Home> {
                               val2 = int.parse(betamount.text) * 80;
                               result = bet - payouts;
                               val3 = bet - payouts;
+                              if(bet<payouts){
+                                poss = payouts - bet;
+                              }else{
+                                poss = bet - payouts;
+                              }
                               count =0;
                               remove = 0;
                               add = 0;
                               pick = "Pick 3 Lines Values with Local Store: ";
+                              addresults = "This is the count for having selected pick 3 Lines local Store ";
+                              addresults_dollar ="dollars a number for the past year";
 
                             }else{
 
@@ -354,10 +426,17 @@ class _HomeState extends State<Home> {
                             val2 = int.parse(betamount.text) * 150;
                             result = bet - payouts;
                             val3 = bet - payouts;
+                            if(bet<payouts){
+                              poss = payouts - bet;
+                            }else{
+                              poss = bet - payouts;
+                            }
                             count =0;
                             remove = 0;
                             add = 0;
                             pick = "Pick 3 Lines Values:";
+                            addresults = "This is the count for having selected pick 3 Lines";
+                            addresults_dollar ="dollars a number for the past year";
 
                             }
 
@@ -374,10 +453,17 @@ class _HomeState extends State<Home> {
                               val2 = int.parse(betamount.text) * 200;
                               result = bet - payouts;
                               val3 = bet - payouts;
+                              if(bet<payouts){
+                                poss = payouts - bet;
+                              }else{
+                                poss = bet - payouts;
+                              }
                               count = 0;
                               remove = 0;
                               add = 0;
                               pick = "Pick 4 Values with Local Store:";
+                              addresults = "This is the count for having selected pick 4 Local Store ";
+                              addresults_dollar ="dollars a number for the past year";
 
                             }else {
                               payouts = int.parse(payout.text) * 7 * 3 * 2;
@@ -386,10 +472,17 @@ class _HomeState extends State<Home> {
                               val2 = int.parse(betamount.text) * 375;
                               result = bet - payouts;
                               val3 = bet - payouts;
+                              if(bet<payouts){
+                                poss = payouts - bet;
+                              }else{
+                                poss = bet - payouts;
+                              }
                               count = 0;
                               remove = 0;
                               add = 0;
                               pick = "Pick 4 Values:";
+                              addresults = "This is the count for having selected pick 4- ";
+                              addresults_dollar ="dollars a number for the past year";
                             }
 
                           });
@@ -523,6 +616,8 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
+                SizedBox(height: 10,),
+
 
 
                 SizedBox(height: 20,),
@@ -545,11 +640,19 @@ class _HomeState extends State<Home> {
                       SizedBox(height: 10,),
                       Text('= ${my.format(result)} Profit', style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
                       SizedBox(height: 10,),
-                      Text('= ${converter.convertInt(result)} dollars', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                     Text('= ${converter.convertInt(poss)} dollars', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                      SizedBox(height: 20,),
+
+                      Container(
+                        alignment: Alignment.topLeft,
+
+                        child: Text('= $addresults $add $addresults_dollar',style: TextStyle(fontWeight: FontWeight.bold,
+                            fontSize: 17),),
+                      ),
 
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
