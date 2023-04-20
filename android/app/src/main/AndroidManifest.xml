@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.win_fall">
    <application
-        android:label="winfall p4"
+        android:label="Pick 3 Lines"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
